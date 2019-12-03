@@ -29,7 +29,7 @@
 <p>Before we can configure the script to run via Azure Automation Runbook we need to register an application with Azure AD to pull and set settings via Graph API.</p>
 <ul>
     <li>Sign into the <a href="https://portal.azure.com">Azure Portal</a></li>
-    <li>Navigate to Azure Active Directory > App Registration using the navigation blade.<br /><img src="/blob/master/Resources/Powerbi1_thumb1.jpg" /></li>
+    <li>Navigate to Azure Active Directory > App Registration using the navigation blade.<br /><img src="/Resources/Powerbi1_thumb1.jpg" /></li>
 </ul>
 <h2>Breakdown</h2>
 <h2>Credits</h2>
