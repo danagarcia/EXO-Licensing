@@ -30,7 +30,7 @@
 <ul>
     <li>Sign into the <a href="https://portal.azure.com">Azure Portal</a></li>
     <li>Navigate to <b>Azure Active Directory</b> > <b>App Registration</b> using the navigation blade.</li>
-    <li>Click <b>New registration</b>.<br /><img src="/Resources/Powerbi1_thumb1.jpg" height=100 width=100/></li>
+    <li>Click <b>New registration</b>.<br /><img src="/Resources/Powerbi1_thumb1.jpg" height=500 width=500/></li>
     <li>Provide a <b>Name</b> and click <b>Register</b>.<br /><img src="/Resources/Powerbi2_thumb1.jpg" /></li>
     <li>After the application is created navigate to <b>Manage</b> > <b>API permissions</b>.</li>
     <li>Click <b>Add a permission</b> > <b>Microsoft Graph</b>.<br /><img src="/Resources/Powerbi3_thumb1.jpg" /></li>
