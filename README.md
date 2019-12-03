@@ -2,8 +2,8 @@
 <h2>Table of Contents</h2>
 <table>
     <tr>
-        <td>Description</td>
-        <td>Link</td>
+        <td><b>Description</b></td>
+        <td><b>Link</b></td>
     </tr>
     <tr>
         <td>Summary</td>
