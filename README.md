@@ -36,9 +36,9 @@
     <li>Click <b>Add a permission</b> > <b>Microsoft Graph</b>.<br /><img src="/Resources/Powerbi3_thumb1.jpg" /></li>
     <li>Select <b>Application permissions</b> at the next prompt.<br /><img src="/Resources/Powerbi4_thumb1.jpg" /></li>
     <li>Check <b>User</b> > <b>User.ReadWrite.All</b> and <b>MailboxSettings</b> > <b>MailboxSettings.Read</b></li>
-    <li>Click <b>Add permissions</b>, API permissions looks like this now <img src="/Resources/Powerbi5_thumb1.jpg" /></li>
-    <li>Click <b>Grant admin consent for...</b> and complete the authentication and consent dialog. <img src="/Resources/Powerbi6_thumb1.jpg" /></li>
-    <li>The API permissions list should look like this now. <img src="/Resources/Powerbi7_thumb1.jpg" /></li>
+    <li>Click <b>Add permissions</b>, the API permissions list should look like this now.<br /><img src="/Resources/Powerbi5_thumb1.jpg" /></li>
+    <li>Click <b>Grant admin consent for...</b> and complete the authentication and consent dialog.<br /><img src="/Resources/Powerbi6_thumb1.jpg" /></li>
+    <li>The API permissions list should look like this now.<br /><img src="/Resources/Powerbi7_thumb1.jpg" /></li>
 </ul>
 <h2>Breakdown</h2>
 <h2>Credits</h2>
