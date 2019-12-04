@@ -1,0 +1,13 @@
+name: master
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: output
+      run: write-host test
+      shell: powershell
