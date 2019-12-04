@@ -1,21 +1,6 @@
-<script type="text/javascript">
-function display (action, id)
-{
-    if(action == "show")
-    {
-        document.getElementById("collapse-"+id).style.display = "block";
-        document.getElementById("collapse-link-"+id).href = "javascript:display('hide',"+id+")";
-        document.getElementById("collapse-link-"+id).innerHTML = "Collapse"; 
-    }
-    else if(action == "hide")
-    {
-        document.getElementById("collapse-"+id).style.display = "none";
-        document.getElementById("collapse-link-"+id).href = "javascript:display('show',"+id+")";
-        document.getElementById("collapse-link-"+id).innerHTML = "Expand"; 
-    }
-}
-</script>
 <h1>Exchange Online Licensing</h1>
+<h2>Current Status</h2>
+'git status'
 <h2>Table of Contents</h2>
 <table>
     <tr>
@@ -44,26 +29,23 @@ function display (action, id)
 <h2>Pre-Requisites</h2>
 <h3>Azure Active Directory Application Registration</h3>
 <p>Before we can configure the script to run via Azure Automation Runbook we need to register an application with Azure AD to pull and set settings via Graph API.</p>
-<a id="collapse-link-1" href="javascript:display('show',1)">Expand</a>
-<div id="collapse-1" name="collapse-1" style="display:none;">
-    <ul>
-        <li>Sign into the <a href="https://portal.azure.com">Azure Portal</a></li>
-        <li>Navigate to <b>Azure Active Directory</b> > <b>App Registration</b> using the navigation blade.</li>
-        <li>Click <b>New registration</b>.<br /><img src="/Resources/Powerbi1_thumb1.jpg" /></li>
-        <li>Provide a <b>Name</b> and click <b>Register</b>.<br /><img src="/Resources/Powerbi2_thumb1.jpg" /></li>
-        <li>After the application is created navigate to <b>Manage</b> > <b>API permissions</b>.</li>
-        <li>Click <b>Add a permission</b> > <b>Microsoft Graph</b>.<br /><img src="/Resources/Powerbi3_thumb1.jpg" /></li>
-        <li>Select <b>Application permissions</b> at the next prompt.<br /><img src="/Resources/Powerbi4_thumb1.jpg" /></li>
-        <li>Check <b>User</b> > <b>User.ReadWrite.All</b> and <b>MailboxSettings</b> > <b>MailboxSettings.Read</b> and click <b>Add permissions</b></li>
-        <li>The API permissions list should look like this now.<br /><img src="/Resources/Powerbi5_thumb1.jpg" /></li>
-        <li>Click <b>Grant admin consent for...</b> and complete the authentication and consent dialog.<br /><img src="/Resources/Powerbi6_thumb1.jpg" /></li>
-        <li>The API permissions list should look like this now.<br /><img src="/Resources/Powerbi7_thumb1.jpg" /></li>
-        <li>Navigate to <b>Manage</b> > <b>Certificates & secrets.</b></li>
-        <li>Click <b>New client secret</b>, enter a <b>Description</b>, select how long the secret is valid (<b>Expires</b>), click <b>Add</b>.<br /><img src="/Resources/Powerbi8_thumb1.jpg" /></li>
-        <li>Copy the secret <b>Value</b> as it will only appear this once.<br /><img src="/Resources/Powerbi9_thumb1.jpg" /></li>
-        <li>Navigate to <b>Overview</b> copy the <b>Appliation (client) ID</b><br /><img src="/Resources/Powerbi10_thumb1.jpg" /></li>
-        <li>Store the information you have copied you will need it when setting up the script.</li>
-    </ul>
-</div>
+<ul>
+    <li>Sign into the <a href="https://portal.azure.com">Azure Portal</a></li>
+    <li>Navigate to <b>Azure Active Directory</b> > <b>App Registration</b> using the navigation blade.</li>
+    <li>Click <b>New registration</b>.<br /><img src="/Resources/Powerbi1_thumb1.jpg" /></li>
+    <li>Provide a <b>Name</b> and click <b>Register</b>.<br /><img src="/Resources/Powerbi2_thumb1.jpg" /></li>
+    <li>After the application is created navigate to <b>Manage</b> > <b>API permissions</b>.</li>
+    <li>Click <b>Add a permission</b> > <b>Microsoft Graph</b>.<br /><img src="/Resources/Powerbi3_thumb1.jpg" /></li>
+    <li>Select <b>Application permissions</b> at the next prompt.<br /><img src="/Resources/Powerbi4_thumb1.jpg" /></li>
+    <li>Check <b>User</b> > <b>User.ReadWrite.All</b> and <b>MailboxSettings</b> > <b>MailboxSettings.Read</b> and click <b>Add permissions</b></li>
+    <li>The API permissions list should look like this now.<br /><img src="/Resources/Powerbi5_thumb1.jpg" /></li>
+    <li>Click <b>Grant admin consent for...</b> and complete the authentication and consent dialog.<br /><img src="/Resources/Powerbi6_thumb1.jpg" /></li>
+    <li>The API permissions list should look like this now.<br /><img src="/Resources/Powerbi7_thumb1.jpg" /></li>
+    <li>Navigate to <b>Manage</b> > <b>Certificates & secrets.</b></li>
+    <li>Click <b>New client secret</b>, enter a <b>Description</b>, select how long the secret is valid (<b>Expires</b>), click <b>Add</b>.<br /><img src="/Resources/Powerbi8_thumb1.jpg" /></li>
+    <li>Copy the secret <b>Value</b> as it will only appear this once.<br /><img src="/Resources/Powerbi9_thumb1.jpg" /></li>
+    <li>Navigate to <b>Overview</b> copy the <b>Appliation (client) ID</b><br /><img src="/Resources/Powerbi10_thumb1.jpg" /></li>
+    <li>Store the information you have copied you will need it when setting up the script.</li>
+</ul>
 <h2>Breakdown</h2>
 <h2>Credits</h2>
