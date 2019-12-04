@@ -1,6 +1,6 @@
 <h1>Exchange Online Licensing</h1>
 <h2>Current Status</h2>
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/danagarcia/EXO-Licensing/master)
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/danagarcia/EXO-Licensing/master">
 <h2>Table of Contents</h2>
 <table>
     <tr>
