@@ -1,6 +1,6 @@
 <h1>Exchange Online Licensing</h1>
 <h2>Current Status</h2>
-'git status'
+git status
 <h2>Table of Contents</h2>
 <table>
     <tr>
