@@ -8,6 +8,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Run
+    - name: Download
+      run: (Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.github.com/danagarcia/EXO-Licensing/master/Invoke-EXOLicensing.ps1').Content | Out-File .\Invoke-EXOLicensing.ps1 -Force
+      shell: powershell
+      - name: Run
       run: .\Invoke-EXOLicensing.ps1 -TenantDomain 'M365x646361.onmicrosoft.com' -ClientID '8f8e143c-2427-4c40-8639-5dd293713fcb' -Secret 'gw@WnVaXbBswIE5=5SjXU4c3:yqUCjk[' -LicensedExchangeUsersGroupID 'f9f8e712-202d-481e-b8b1-6fe4a6664e99' -LicensedUsersGroupID '697f3d01-bef1-44e6-9ae4-d2c26fd088c2' -DisabledLicensedUsersGroupID 'f5c324ee-b37a-4cae-8e6c-82ce0e00d186'
       shell: powershell
