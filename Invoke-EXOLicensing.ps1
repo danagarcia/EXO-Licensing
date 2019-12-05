@@ -26,32 +26,22 @@
     adds them to the group used for EXO group based licensing, and notes any
     work performed and/or issues found in a Power BI dataset.
 .DESCRIPTION
-    This script checks the status of the SKUAssigned attribute on EXO mailboxes,
-    and if it isn't set to true then it considers the mailbox unlicensed. It
-    then checks the O365 license status of all EXO unlicensed mailboxes, and
-    notes which ones are missing the core O365 license and those which Azure AD
-    think are EXO licensed (meaning there is a sync issue between Azure AD and
-    EXO). Lastly it tries to add the unlicensed mailboxes the group designated
-    for EXO group based licensing. All of the discovered information and actions
-    taken are exported to a CSV report file at the end.
-.PARAMETER OutCSVFile
-    Specifies the path and file name of the CSV to     export the collected data
-    to. If no value is supplied, then a default file named
-    ProcessedMailboxes-MM-dd-yyyy.CSV is created in the current folder, where
-    the MM-dd-yyyy are the current date.
-.PARAMETER WhatIf
-    Optional: Instructs the script to not make any changes, just simulate what
-    user accounts would be added to the license group, and the results are
-    stored in the default CSV file name format in current directory.
-.EXAMPLE
-    Invoke-EXOMailboxGroupLicensing.ps1 -OutCSVFile .\NewMailboxLicenseReport.CSV
-    The script performs its normal mailbox licensing check, adding regular user
-    mailbox accounts to the designated group in Azure AD, and the results are
-    stored in the NewMailboxLicenseReport.CSV file in the current directory.
-.EXAMPLE
-    Invoke-EXOMailboxGroupLicensing.ps1 -WhatIf
-    All actions in the script are simulated and the HTML report is sent to the
-    predefined SMTP address.
+    This script check the users who are members of three different groups.
+    
+    1. Licensed Users (All plans excluding Exchange)
+    2. Licensed Exchange Users (Only Exchange plans)
+    3. Licensed Disabled Users (Only Exchange and Sharepoint plans)
+
+    It then compares users who are in group 1 (licensed users) with users in
+    group 2 (licensed Exchange users). This allows us to identify which users
+    are licensed and active who don't have an Exchange license. It then checks
+    to see if it can pull those users mailbox settings via Graph API. If it can't
+    we can safely assume that they don't have a valid mailbox. If we can pull
+    the settings then we now know they have a mailbox without a license. We then
+    add them to group 2 for group based licensing. The script also compares users
+    who are in group 3 (licensed disabled users) with users in group 2. If there
+    are any users from group 2 present in group 3 they are removed. This is to
+    ensure proper license hygiene.
 .LINK
     https://www.github.com/danagarcia/EXO-Licensing
 #>
