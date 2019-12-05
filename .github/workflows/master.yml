@@ -8,7 +8,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: action\checkout@v2-beta
+    - uses: actions\checkout@v2-beta
       with:
         repository: danagarcia\EXO-Licensing
     - name: Run
