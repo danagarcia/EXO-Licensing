@@ -9,5 +9,5 @@ jobs:
 
     steps:
     - name: Run
-      run: $Output = ""; Get-ChildItem | ForEach-Object {$Output+="$($_.Name);"}; $Output
+      run: Write-Host "Hello World"
       shell: powershell
