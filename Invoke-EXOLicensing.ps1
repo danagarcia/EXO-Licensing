@@ -111,7 +111,8 @@ Function Get-GroupMemberIDs
             {
                 200 {}
                 429 {
-                    Sleep -Seconds 5
+                    #Graph throttling, sleep for 5 seconds.
+                    Start-Sleep -Seconds 5
                     $response = Invoke-WebRequest -UseBasicParsing -Headers $requestHeader -Uri $requestUri
                 }
                 default {throw}
@@ -301,9 +302,9 @@ $licensedExchangeUserIDs = $null
 [GC]::Collect()
 If($ScopeToSingleUser)
 {
-    $disabledUserDif = $disabledUserDif | ?{$_ -like $ScopeToSingleUser}
-    $licensedUserDif = $licensedUserDif | ?{$_ -like $ScopeToSingleUser}
-    $reenabledUserDif = $reenabledUserDif | ?{$_ -like $ScopeToSingleUser}
+    $disabledUserDif = $disabledUserDif | Where-Object {$_ -like $ScopeToSingleUser}
+    $licensedUserDif = $licensedUserDif | Where-Object {$_ -like $ScopeToSingleUser}
+    $reenabledUserDif = $reenabledUserDif | Where-Object {$_ -like $ScopeToSingleUser}
 }
 #Configure URL for mailbox settings
 $mailboxSettingsURL = "https://graph.microsoft.com/v1.0/users/{0}/mailboxSettings"
