@@ -53,15 +53,17 @@ param(
     [Parameter(Mandatory=$True,
         Position=2)][String] $ClientSecret,
     [Parameter(Mandatory=$True,
-        Position=3)][String] $LicensedExchangeUsersGroupID,
+        Position=3)][String] $PowerBiEndPoint,
     [Parameter(Mandatory=$True,
-        Position=4)][String] $DisabledExchangeUsersGroupID,
+        Position=4)][String] $LicensedExchangeUsersGroupID,
     [Parameter(Mandatory=$True,
-        Position=5)][String] $LicensedUsersGroupID,
+        Position=5)][String] $DisabledExchangeUsersGroupID,
     [Parameter(Mandatory=$True,
-        Position=6)][String] $DisabledLicensedUsersGroupID,
+        Position=6)][String] $LicensedUsersGroupID,
+    [Parameter(Mandatory=$True,
+        Position=7)][String] $DisabledLicensedUsersGroupID,
     [Parameter(Mandatory=$False,
-        Position=7)][String] $ScopeToSingleUser
+        Position=8)][String] $ScopeToSingleUser
 )
 
 #Declare static variables
@@ -247,7 +249,7 @@ Function Write-LogEntry
         #Pull User Principal Name from Graph response
         $userPrincipalName = ($response.Content | ConvertFrom-Json).userPrincipalName
         #Configure web request values to push data into Power BI streaming dataset
-        $endpoint = "https://api.powerbigov.us/beta/66cf5074-5afe-48d1-a691-a12b2121f44b/datasets/e1875004-7410-4bab-9bfa-c3c3ea7d0df6/rows?tenant=66cf5074-5afe-48d1-a691-a12b2121f44b&UPN=EmlaeluZ%40state.gov&key=qPfyBSbPUrb6bET38jwSQRHfZ4QoIwxi4jLndOonJqeHE5ND2gVGhQpAiKJ%2FMbWJExyT8GY7JglfhBZu3NjO6A%3D%3D"
+        $endpoint = $PowerBiEndPoint
         $payload = @{
             "Time Stamp" = (Get-Date -Format "yyyy-MM-ddTHH:mm:ss.000Z").ToString()
             "User Principal" = $userPrincipalName
