@@ -12,5 +12,5 @@ jobs:
       with:
         repository: danagarcia/EXO-Licensing
     - name: Run
-      run: .\Invoke-EXOLicensing.ps1 -TenantDomain 'M365x646361.onmicrosoft.com' -ClientID '8f8e143c-2427-4c40-8639-5dd293713fcb' -ClientSecret 'gw@WnVaXbBswIE5=5SjXU4c3:yqUCjk[' -LicensedExchangeUsersGroupID 'f9f8e712-202d-481e-b8b1-6fe4a6664e99' -LicensedUsersGroupID '697f3d01-bef1-44e6-9ae4-d2c26fd088c2' -DisabledLicensedUsersGroupID 'f5c324ee-b37a-4cae-8e6c-82ce0e00d186'
+      run: .\Invoke-EXOLicensing.ps1 -TenantDomain 'M365x646361.onmicrosoft.com' -ClientID '8f8e143c-2427-4c40-8639-5dd293713fcb' -ClientSecret 'gw@WnVaXbBswIE5=5SjXU4c3:yqUCjk[' -LicensedExchangeUsersGroupID 'f9f8e712-202d-481e-b8b1-6fe4a6664e99' -LicensedUsersGroupID '697f3d01-bef1-44e6-9ae4-d2c26fd088c2' -DisabledLicensedUsersGroupID 'f5c324ee-b37a-4cae-8e6c-82ce0e00d186' -DisabledExchangeUsersGroupID '59b82bf4-1e9d-49db-b875-abe22896c5af' -PowerBIEndPoint 'https://api.powerbi.com/beta/bf94b249-60b8-49ad-9975-4e6524ef1362/datasets/ee72433e-8ede-4fd5-80f7-a6e42b0f20d4/rows?key=zFxG3BDVZLL2TS47nLz%2BHc87X%2BdyEUjvbwC5AMlklunPummXKVzMBEpX5ioGkW5UW0NeTVXpf2u2FhHv55lNHg%3D%3D'
       shell: powershell
