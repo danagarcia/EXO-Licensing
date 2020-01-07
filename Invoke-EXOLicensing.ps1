@@ -249,6 +249,7 @@ Function Write-LogEntry
         #Pull User Principal Name from Graph response
         $userPrincipalName = ($response.Content | ConvertFrom-Json).userPrincipalName
         #Configure web request values to push data into Power BI streaming dataset
+        #Get endpoint from parameter
         $endpoint = $PowerBiEndPoint
         $payload = @{
             "Time Stamp" = (Get-Date -Format "yyyy-MM-ddTHH:mm:ss.000Z").ToString()
